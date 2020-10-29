@@ -34,12 +34,15 @@ void state_advance()		/* alternate between toggling red & green */
 {
   char changed = 0;  
 
-  static enum {R=0, G=1} color = G;
+  static enum {R=0, G=1} color = R; // changed from G to R
   switch (color) {
-  case R: changed = toggle_red(); color = G; break;
+  case R: changed = toggle_red(); color = R; break; // changed from G to R
   case G: changed = toggle_green(); color = R; break;
   }
 
   led_changed = changed;
   led_update();
 }
+
+
+
