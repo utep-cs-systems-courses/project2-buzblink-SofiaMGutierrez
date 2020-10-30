@@ -2,6 +2,7 @@
 #include "libTimer.h"
 #include "buzzer.h"
 
+
 void buzzer_init()
 {
     /* 
@@ -24,8 +25,12 @@ void buzzer_set_period(short cycles) /* buzzer clock = 2MHz.  (period of 1k resu
   CCR1 = cycles >> 1;		/* one half cycle */
 }
 
-
-    
-    
-  
-
+void song()
+{
+  int song[1] ={1000};
+  int i = 0;
+  while(i){
+    buzzer_set_period(song[i]);
+    i++;
+  }
+}
