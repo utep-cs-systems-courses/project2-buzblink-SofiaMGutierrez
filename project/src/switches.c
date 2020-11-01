@@ -35,23 +35,20 @@ switch_interrupt_handler()
   S3 = (p2val & SW3) ? 0 : 1;
   S4 = (p2val & SW4) ? 0 : 1;
   if(S1){
-    song();
+    dim();
   }
   if(S2){
     //buzzer_set_period(1050);
-    //buzzer_set_period(2100);
-    buzzer_set_period(3150);
+    buzzer_set_period(2100);
   }
   if(S3){
     //buzzer_set_period(920);
-    //buzzer_set_period(1840);
-    buzzer_set_period(2760);
+    buzzer_set_period(1840);
   }
   if(S4){
     //buzzer_set_period(780);
-    //buzzer_set_period(1560);
-    buzzer_set_period(2340);
+    buzzer_set_period(1560);
   }
   switch_state_changed = 1;
-  led_update();
+  //led_update();
 }
